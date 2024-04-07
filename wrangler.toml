@@ -1,0 +1,4 @@
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "workers-orm-tests"
+database_id = "dee8be6e-f367-43b0-a223-48d654cffb60"
