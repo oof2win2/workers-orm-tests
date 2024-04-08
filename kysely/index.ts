@@ -1,8 +1,24 @@
 import { AutoRouter, type IRequest, error } from "itty-router";
-import { type Database } from "./schema";
 import { Kysely, ParseJSONResultsPlugin } from "kysely";
 import { D1Dialect } from "kysely-d1";
 import { jsonArrayFrom } from "kysely/helpers/sqlite";
+
+interface PostTable {
+	id: number
+	title: string
+	content: string
+}
+
+interface CommentTable {
+	id: number
+	postId: number
+	content: string
+}
+
+interface Database {
+	posts: PostTable
+	comments: CommentTable
+}
 
 type CFArgs = [Env, ExecutionContext];
 
